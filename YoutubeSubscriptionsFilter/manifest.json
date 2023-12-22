@@ -1,0 +1,19 @@
+{
+  "name": "Youtube Subscriptions Filter- Minimal",
+  "description": "Add a search bar to your Subscriptions List",
+  "version": "0.0",
+  "manifest_version": 3,
+
+  "permissions": [ ],
+  "background": {
+    "service_worker": "background.js",
+    "type":"module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["filter.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
